@@ -83,6 +83,7 @@ class FeistelNet:
     @staticmethod
     def sub_key(str1, str2):
         return hashlib.sha256(str1 + str2).hexdigest()
+        return hashlib.sha256((str1 + str2).encode('utf-8')).hexdigest()
 
     @staticmethod
     def xor(str1, str2):
